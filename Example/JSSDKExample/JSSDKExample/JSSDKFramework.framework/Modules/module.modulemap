@@ -1,0 +1,6 @@
+framework module JSSDKFramework {
+  umbrella header "JSSDKFramework.h"
+
+  export *
+  module * { export * }
+}
