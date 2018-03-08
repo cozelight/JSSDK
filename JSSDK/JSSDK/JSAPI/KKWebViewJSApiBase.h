@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSSDKErrCode.h"
 #import "KKWebViewJavaScriptManager.h"
 
 #define KKWEB_VIEW_JSAPI_SYNTHESIZE @synthesize apiName = _apiName, isNeedRegistId = _isNeedRegistId, isEvent = _isEvent, paramData = _paramData, responseCallback = _responseCallback, jsManager = _jsManager;

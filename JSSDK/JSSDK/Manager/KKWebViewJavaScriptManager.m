@@ -11,7 +11,7 @@
 
 @interface KKWebViewJavaScriptManager ()
 
-@property (nonatomic, copy) NSMutableArray *registeredApiList;
+@property (nonatomic, strong) NSMutableArray *registeredApiList;
 
 @end
 
@@ -163,7 +163,7 @@
         NSMutableArray *supportApiList = [NSMutableArray array];
         NSMutableArray *invalidJsApiArr = [NSMutableArray array];
         
-        NSArray *jsApiList = dict[@"jsApiList"];
+        NSArray *jsApiList = [dict valueForKey:@"jsApiList"];
         [jsApiList enumerateObjectsUsingBlock:^(NSString *apiName, NSUInteger idx, BOOL * _Nonnull stop) {
             id<KKWebViewJSApiBaseProtocol> obj = [weakSelf createJSApiObj:apiName];
             if (!obj) {
@@ -211,14 +211,15 @@
         
         [strongSelf _authenticationSignatureParameter:dict comlete:^(NSError *error) {
             if (error) {
-                responseCallback([KKWebViewJavaScriptManager createFailureResponseDataWithErrorcode:-1 errormsg:@"authentication failure"]);
+                NSString *errorMsg = [NSString stringWithFormat:@"authentication failure, error:%@", error.description];
+                responseCallback([KKWebViewJavaScriptManager createFailureResponseDataWithErrorcode:-1 errormsg:errorMsg]);
                 return;
             }
             
             NSMutableArray *supportApiList = [NSMutableArray array];
             NSMutableArray *invalidJsApiArr = [NSMutableArray array];
             
-            NSArray *jsApiList = dict[@"jsApiList"];
+            NSArray *jsApiList = [dict valueForKey:@"jsApiList"];
             [jsApiList enumerateObjectsUsingBlock:^(NSString *apiName, NSUInteger idx, BOOL * _Nonnull stop) {
                 id<KKWebViewJSApiBaseProtocol> obj = [strongSelf createJSApiObj:apiName];
                 if (!obj) {

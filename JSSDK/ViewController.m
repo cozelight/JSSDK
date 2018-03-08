@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 #import "KKWebViewJavaScriptManager.h"
+#import "KKSSZipArchive.h"
 
 typedef void(^barButtonDidClick)(UIButton *barButton);
 
@@ -32,6 +33,7 @@ typedef void(^barButtonDidClick)(UIButton *barButton);
     [super viewDidLoad];
     
     WKWebViewConfiguration *conf = [[WKWebViewConfiguration alloc] init];
+    
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:conf];
     
     self.jsManager = [KKWebViewJavaScriptManager managerForWebView:self.webView containerVC:self];
@@ -40,10 +42,27 @@ typedef void(^barButtonDidClick)(UIButton *barButton);
     
     [self.view addSubview:self.webView];
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.251:8282/fed/cc-sdk"]]];
-    
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
     self.navigationItem.rightBarButtonItems = @[rightButtonItem];
+    
+    NSString *h5IndexFile = [[[self documentPath] stringByAppendingPathComponent:@"H5"] stringByAppendingPathComponent:@"index.html"];
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:h5IndexFile];
+    if (isExist) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:h5IndexFile]]];
+        return;
+    }
+    
+    NSString *originZipFile = [[NSBundle mainBundle] pathForResource:@"H5.zip" ofType:nil];
+    
+    [KKSSZipArchive unzipFileAtPath:originZipFile toDestination:[self documentPath] progressHandler:^(NSString * _Nonnull entry, kk_unz_file_info zipInfo, long entryNumber, long total) {
+        
+    } completionHandler:^(NSString * _Nonnull path, BOOL succeeded, NSError * _Nullable error) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:h5IndexFile]]];
+    }];
+}
+
+- (NSString *)documentPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
 }
 
 - (BOOL)checkAPILegal:(NSString *)apiName {
@@ -104,6 +123,7 @@ typedef void(^barButtonDidClick)(UIButton *barButton);
 }
 
 - (void)rightButtonClick {
+    
     if (self.rightButtonAction) {
         self.rightButtonAction(self.rightButton);
     } else {

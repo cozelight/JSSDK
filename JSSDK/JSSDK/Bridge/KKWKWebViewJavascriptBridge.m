@@ -12,15 +12,12 @@
 
 #if defined(supportsWKWebKit)
 
-#define kCustomJSBridgeName @"ccwork_bridge"
-
 @interface KKWKWebViewJavascriptBridge ()<KKWebViewJavascriptBridgeBaseDelegate>
 
 @end
 
 @implementation KKWKWebViewJavascriptBridge {
     __weak WKWebView* _webView;
-    WKWebViewConfiguration *_configuration;
     __weak id<WKNavigationDelegate> _webViewDelegate;
     long _uniqueId;
     KKWebViewJavascriptBridgeBase *_base;
@@ -99,6 +96,18 @@
     _base.delegate = self;
     [_configuration.userContentController addScriptMessageHandler:self name:kCustomJSBridgeName];
     [_configuration.userContentController addScriptMessageHandler:self name:kCustomJSPluginName];
+    
+    if (@available(iOS 9.0, *)) {
+        @try {
+            [_configuration.preferences setValue:@TRUE forKey:@"allowFileAccessFromFileURLs"];
+        }
+        @catch (NSException *exception) {}
+        
+        @try {
+            [_configuration setValue:@TRUE forKey:@"allowUniversalAccessFromFileURLs"];
+        }
+        @catch (NSException *exception) {}
+    }
 }
 
 
@@ -221,7 +230,7 @@ didFailNavigation:(WKNavigation *)navigation
                 if ([obj respondsToSelector:functionSelector]) {
                     obj.webView = _webView;
                     obj.taskId = [dict[@"taskId"] unsignedIntegerValue];
-                    obj.data = [dict[@"data"] description];
+                    obj.data = dict[@"data"];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                     [obj performSelector:functionSelector];

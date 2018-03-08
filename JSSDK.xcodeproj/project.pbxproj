@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52E45CC205108EC00668343 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45A6205108EC00668343 /* crypt.c */; };
+		A52E45CD205108EC00668343 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45A7205108EC00668343 /* unzip.c */; };
+		A52E45CE205108EC00668343 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45A8205108EC00668343 /* zip.c */; };
+		A52E45CF205108EC00668343 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45AA205108EC00668343 /* ioapi.c */; };
+		A52E45D0205108EC00668343 /* ioapi_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45AC205108EC00668343 /* ioapi_buf.c */; };
+		A52E45D1205108EC00668343 /* ioapi_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45B0205108EC00668343 /* ioapi_mem.c */; };
+		A52E45D2205108EC00668343 /* minishared.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45B1205108EC00668343 /* minishared.c */; };
+		A52E45D3205108EC00668343 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45B7205108EC00668343 /* aeskey.c */; };
+		A52E45D4205108EC00668343 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45B8205108EC00668343 /* hmac.c */; };
+		A52E45D5205108EC00668343 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45BB205108EC00668343 /* aescrypt.c */; };
+		A52E45D6205108EC00668343 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45BC205108EC00668343 /* fileenc.c */; };
+		A52E45D7205108EC00668343 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45BE205108EC00668343 /* sha1.c */; };
+		A52E45D8205108EC00668343 /* aes_ni.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45C1205108EC00668343 /* aes_ni.c */; };
+		A52E45D9205108EC00668343 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45C3205108EC00668343 /* prng.c */; };
+		A52E45DA205108EC00668343 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45C5205108EC00668343 /* pwd2key.c */; };
+		A52E45DB205108EC00668343 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = A52E45C6205108EC00668343 /* aestab.c */; };
+		A52E45DC205108EC00668343 /* KKSSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E45CB205108EC00668343 /* KKSSZipArchive.m */; };
+		A52E45E0205110E000668343 /* H5.zip in Resources */ = {isa = PBXBuildFile; fileRef = A52E45DF205110E000668343 /* H5.zip */; };
+		A52E45E72051153100668343 /* KKJSSDKURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E45E22051153100668343 /* KKJSSDKURLProtocol.m */; };
+		A52E45E82051153100668343 /* NSURLProtocol+WebKitSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E45E32051153100668343 /* NSURLProtocol+WebKitSupport.m */; };
 		A5505F761FD5234500C6C58A /* KKWKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A5505F701FD5234500C6C58A /* KKWKWebViewJavascriptBridge.m */; };
 		A5505F771FD5234500C6C58A /* KKWebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5505F721FD5234500C6C58A /* KKWebViewJavascriptBridgeBase.m */; };
 		A5505F781FD5234500C6C58A /* KKWebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = A5505F731FD5234500C6C58A /* KKWebViewJavascriptBridge_JS.m */; };
@@ -68,6 +88,50 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A52E45A4205108EC00668343 /* KKSSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSSZipCommon.h; sourceTree = "<group>"; };
+		A52E45A6205108EC00668343 /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
+		A52E45A7205108EC00668343 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		A52E45A8205108EC00668343 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		A52E45A9205108EC00668343 /* minishared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minishared.h; sourceTree = "<group>"; };
+		A52E45AA205108EC00668343 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		A52E45AB205108EC00668343 /* ioapi_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi_mem.h; sourceTree = "<group>"; };
+		A52E45AC205108EC00668343 /* ioapi_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi_buf.c; sourceTree = "<group>"; };
+		A52E45AD205108EC00668343 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		A52E45AE205108EC00668343 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		A52E45AF205108EC00668343 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		A52E45B0205108EC00668343 /* ioapi_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi_mem.c; sourceTree = "<group>"; };
+		A52E45B1205108EC00668343 /* minishared.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minishared.c; sourceTree = "<group>"; };
+		A52E45B2205108EC00668343 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		A52E45B3205108EC00668343 /* ioapi_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi_buf.h; sourceTree = "<group>"; };
+		A52E45B5205108EC00668343 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		A52E45B6205108EC00668343 /* aes_ni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_ni.h; sourceTree = "<group>"; };
+		A52E45B7205108EC00668343 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		A52E45B8205108EC00668343 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		A52E45B9205108EC00668343 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		A52E45BA205108EC00668343 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		A52E45BB205108EC00668343 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		A52E45BC205108EC00668343 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		A52E45BD205108EC00668343 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		A52E45BE205108EC00668343 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		A52E45BF205108EC00668343 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		A52E45C0205108EC00668343 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		A52E45C1205108EC00668343 /* aes_ni.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_ni.c; sourceTree = "<group>"; };
+		A52E45C2205108EC00668343 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		A52E45C3205108EC00668343 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		A52E45C4205108EC00668343 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		A52E45C5205108EC00668343 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		A52E45C6205108EC00668343 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		A52E45C7205108EC00668343 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		A52E45C8205108EC00668343 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		A52E45C9205108EC00668343 /* KKSSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSSZipArchive.h; sourceTree = "<group>"; };
+		A52E45CA205108EC00668343 /* KKZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKZipArchive.h; sourceTree = "<group>"; };
+		A52E45CB205108EC00668343 /* KKSSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSSZipArchive.m; sourceTree = "<group>"; };
+		A52E45DF205110E000668343 /* H5.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = H5.zip; sourceTree = "<group>"; };
+		A52E45E22051153100668343 /* KKJSSDKURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKJSSDKURLProtocol.m; sourceTree = "<group>"; };
+		A52E45E32051153100668343 /* NSURLProtocol+WebKitSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLProtocol+WebKitSupport.m"; sourceTree = "<group>"; };
+		A52E45E42051153100668343 /* JSSDKErrCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSDKErrCode.h; sourceTree = "<group>"; };
+		A52E45E52051153100668343 /* NSURLProtocol+WebKitSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+WebKitSupport.h"; sourceTree = "<group>"; };
+		A52E45E62051153100668343 /* KKJSSDKURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKJSSDKURLProtocol.h; sourceTree = "<group>"; };
 		A5505F701FD5234500C6C58A /* KKWKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKWKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		A5505F711FD5234500C6C58A /* KKWKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKWKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		A5505F721FD5234500C6C58A /* KKWebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKWebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -139,6 +203,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52E45A3205108EC00668343 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				A52E45A4205108EC00668343 /* KKSSZipCommon.h */,
+				A52E45A5205108EC00668343 /* minizip */,
+				A52E45C9205108EC00668343 /* KKSSZipArchive.h */,
+				A52E45CA205108EC00668343 /* KKZipArchive.h */,
+				A52E45CB205108EC00668343 /* KKSSZipArchive.m */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		A52E45A5205108EC00668343 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				A52E45A6205108EC00668343 /* crypt.c */,
+				A52E45A7205108EC00668343 /* unzip.c */,
+				A52E45A8205108EC00668343 /* zip.c */,
+				A52E45A9205108EC00668343 /* minishared.h */,
+				A52E45AA205108EC00668343 /* ioapi.c */,
+				A52E45AB205108EC00668343 /* ioapi_mem.h */,
+				A52E45AC205108EC00668343 /* ioapi_buf.c */,
+				A52E45AD205108EC00668343 /* crypt.h */,
+				A52E45AE205108EC00668343 /* zip.h */,
+				A52E45AF205108EC00668343 /* unzip.h */,
+				A52E45B0205108EC00668343 /* ioapi_mem.c */,
+				A52E45B1205108EC00668343 /* minishared.c */,
+				A52E45B2205108EC00668343 /* ioapi.h */,
+				A52E45B3205108EC00668343 /* ioapi_buf.h */,
+				A52E45B4205108EC00668343 /* aes */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		A52E45B4205108EC00668343 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				A52E45B5205108EC00668343 /* prng.h */,
+				A52E45B6205108EC00668343 /* aes_ni.h */,
+				A52E45B7205108EC00668343 /* aeskey.c */,
+				A52E45B8205108EC00668343 /* hmac.c */,
+				A52E45B9205108EC00668343 /* aestab.h */,
+				A52E45BA205108EC00668343 /* pwd2key.h */,
+				A52E45BB205108EC00668343 /* aescrypt.c */,
+				A52E45BC205108EC00668343 /* fileenc.c */,
+				A52E45BD205108EC00668343 /* aesopt.h */,
+				A52E45BE205108EC00668343 /* sha1.c */,
+				A52E45BF205108EC00668343 /* brg_types.h */,
+				A52E45C0205108EC00668343 /* hmac.h */,
+				A52E45C1205108EC00668343 /* aes_ni.c */,
+				A52E45C2205108EC00668343 /* brg_endian.h */,
+				A52E45C3205108EC00668343 /* prng.c */,
+				A52E45C4205108EC00668343 /* aes.h */,
+				A52E45C5205108EC00668343 /* pwd2key.c */,
+				A52E45C6205108EC00668343 /* aestab.c */,
+				A52E45C7205108EC00668343 /* sha1.h */,
+				A52E45C8205108EC00668343 /* fileenc.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		A52E45E12051153100668343 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A52E45E42051153100668343 /* JSSDKErrCode.h */,
+				A52E45E62051153100668343 /* KKJSSDKURLProtocol.h */,
+				A52E45E22051153100668343 /* KKJSSDKURLProtocol.m */,
+				A52E45E52051153100668343 /* NSURLProtocol+WebKitSupport.h */,
+				A52E45E32051153100668343 /* NSURLProtocol+WebKitSupport.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		A5505F6F1FD5233700C6C58A /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +332,7 @@
 		A58E1BC61FCFB27600FB9DBE /* JSSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A52E45A3205108EC00668343 /* SSZipArchive */,
 				A58E1BDD1FCFB29200FB9DBE /* JSSDK */,
 				A5C29F6D1FD7C33C0030FFFC /* API */,
 				A58E1BC71FCFB27600FB9DBE /* AppDelegate.h */,
@@ -206,6 +344,7 @@
 				A58E1BD21FCFB27600FB9DBE /* LaunchScreen.storyboard */,
 				A58E1BD51FCFB27600FB9DBE /* Info.plist */,
 				A58E1BD61FCFB27600FB9DBE /* main.m */,
+				A52E45DF205110E000668343 /* H5.zip */,
 			);
 			path = JSSDK;
 			sourceTree = "<group>";
@@ -213,6 +352,7 @@
 		A58E1BDD1FCFB29200FB9DBE /* JSSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A52E45E12051153100668343 /* Other */,
 				A552C73C1FD6A7EB00223ADD /* Plugin */,
 				A552C7331FD6A7E000223ADD /* JSAPI */,
 				A5505F6F1FD5233700C6C58A /* Bridge */,
@@ -431,6 +571,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52E45E0205110E000668343 /* H5.zip in Resources */,
 				A5C29F2B1FD790270030FFFC /* JSSDKPlugin.bundle in Resources */,
 				A58E1BD41FCFB27600FB9DBE /* LaunchScreen.storyboard in Resources */,
 				A58E1BD11FCFB27600FB9DBE /* Assets.xcassets in Resources */,
@@ -467,16 +608,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52E45D4205108EC00668343 /* hmac.c in Sources */,
 				A5C29F771FD7C33C0030FFFC /* biz_navigation.m in Sources */,
 				A5C29F361FD791A10030FFFC /* KKWebViewJSPluginBase.m in Sources */,
 				A5505F771FD5234500C6C58A /* KKWebViewJavascriptBridgeBase.m in Sources */,
+				A52E45DC205108EC00668343 /* KKSSZipArchive.m in Sources */,
+				A52E45DB205108EC00668343 /* aestab.c in Sources */,
 				A5C29F761FD7C33C0030FFFC /* device_notification.m in Sources */,
+				A52E45CD205108EC00668343 /* unzip.c in Sources */,
 				A58E1BCC1FCFB27600FB9DBE /* ViewController.m in Sources */,
 				A5505F761FD5234500C6C58A /* KKWKWebViewJavascriptBridge.m in Sources */,
+				A52E45D2205108EC00668343 /* minishared.c in Sources */,
+				A52E45CC205108EC00668343 /* crypt.c in Sources */,
+				A52E45D6205108EC00668343 /* fileenc.c in Sources */,
 				A5C29F781FD7C33C0030FFFC /* Console.m in Sources */,
+				A52E45CF205108EC00668343 /* ioapi.c in Sources */,
+				A52E45D0205108EC00668343 /* ioapi_buf.c in Sources */,
 				A5505F7B1FD523E800C6C58A /* KKWebViewJavaScriptManager.m in Sources */,
+				A52E45D9205108EC00668343 /* prng.c in Sources */,
 				A58E1BD71FCFB27600FB9DBE /* main.m in Sources */,
+				A52E45D8205108EC00668343 /* aes_ni.c in Sources */,
+				A52E45D3205108EC00668343 /* aeskey.c in Sources */,
+				A52E45D1205108EC00668343 /* ioapi_mem.c in Sources */,
+				A52E45E82051153100668343 /* NSURLProtocol+WebKitSupport.m in Sources */,
+				A52E45DA205108EC00668343 /* pwd2key.c in Sources */,
+				A52E45D7205108EC00668343 /* sha1.c in Sources */,
+				A52E45CE205108EC00668343 /* zip.c in Sources */,
+				A52E45E72051153100668343 /* KKJSSDKURLProtocol.m in Sources */,
 				A5505F781FD5234500C6C58A /* KKWebViewJavascriptBridge_JS.m in Sources */,
+				A52E45D5205108EC00668343 /* aescrypt.c in Sources */,
 				A58E1BC91FCFB27600FB9DBE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
