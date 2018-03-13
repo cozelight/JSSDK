@@ -1,4 +1,3 @@
-
 ## 前言
 
 Hybrid 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。
@@ -141,9 +140,61 @@ window.webkit.messageHandlers.nativeObject.postMessage(data);
 
 Manager 为整个 Hybrid 核心，负责 JS 方法到 Native 端的映射，可灵活扩展。利用 runtime 特性，使用得到的 className 和 functionName 反射出指定的对象，并执行指定函数。
 
-## 其它问题
+#### 权限验证
 
-白屏问题
+针对打开的 WebView, 是否拥有合法使用 Hybrid 的权限需要进行验证，只有验证通过的页面，才能使用原生提供的能力。Manager 提供入口，具体验证由上层实现。
+
+```
+- (void)authenticationSignatureParameter:(NSDictionary *)parameter comlete:(void (^)(NSError *error))complete;
+```
+
+#### 组件协议
+
+JS 页面加载完，在使用 Native 能力之前，需要进行注册，即告知 Native 当前页面所需要使用的 API 列表。Manager 处理该流程，验证 Native 是否实现该 API，同时把 API 转换成对象，对象遵循以下协议：
+
+```
+@protocol KKWebViewJSApiBaseProtocol <NSObject>
+
+@required
+/// api名字
+@property (nonatomic, copy) NSString *apiName;
+/// 是否支持js多次回调
+@property (nonatomic, assign) NSInteger isNeedRegistId;
+/// 是否为事件类型，客户端调用，类似发通知给JS
+@property (nonatomic, assign) NSInteger isEvent;
+/// api接口参数数据
+@property (nonatomic, strong) NSDictionary *paramData;
+/// api接口响应回调
+@property (nonatomic, copy) WVJBResponseCallback responseCallback;
+
+@property (nonatomic, weak) KKWebViewJavaScriptManager *jsManager;
+
+@end;
+```
+
+#### 反射函数
+
+Manager 把 API 转换成对象时，利用 Objective-C 的 runtime 反射机制：
+
+```
+Class cls = NSClassFromString(className);
+    if ([cls conformsToProtocol:@protocol(KKWebViewJSApiBaseProtocol)]) {
+        id<KKWebViewJSApiBaseProtocol> obj = [[cls alloc] init];
+        if ([obj respondsToSelector:NSSelectorFromString(functionName)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [obj performSelector:NSSelectorFromString(functionName)];
+#pragma clang diagnostic pop
+            return obj;
+        } else {
+            NSLog(@"function is not found");
+            return nil;
+        }
+    } else {
+        NSLog(@"clss is not found");
+        return nil;
+    }
+```
 
 
 ## 参考文章
