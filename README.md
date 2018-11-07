@@ -16,7 +16,7 @@ Hybrid 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebV
 
 框架结构如下：
 
-![Hybrid 框架](http://o8anxf7e1.bkt.clouddn.com/Hybrid%E6%A1%86%E6%9E%B6.png)
+![Hybrid 框架](https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/Hybrid%E6%A1%86%E6%9E%B6.png)
 
 ## WebView 容器
 
@@ -46,7 +46,7 @@ iOS9 以后，可以通过 KVC 设置 `WKPreferences` 的 `allowFileAccessFromFi
 
 由于容器选择是 WKWebView，所以 JS 调用 Native 端有两种方式 `URL拦截` 和 `messageHandler` 。下图为两种方式性能对比
 
-![性能对比](http://o8anxf7e1.bkt.clouddn.com/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png)
+![性能对比](https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png)
 
 `messageHandler` 对比 `URL拦截` 性能大约提升了 20%，受益于 WKWebView，本框架采用 `messageHandler` + `evaluatingJavaScript` 的方式进行通信交互。
 
@@ -120,7 +120,7 @@ window.webkit.messageHandlers.nativeObject.postMessage(data);
 
 整个 Native 和 JS 的 Bridge 交互流程如下图所示：
 
-![brdige流程](http://o8anxf7e1.bkt.clouddn.com/bridge%E6%B5%81%E7%A8%8B.png)
+![brdige流程](https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/bridge%E6%B5%81%E7%A8%8B.png)
 
 
 在 Native / JS 端，创建 Bridge 对象，该对象需包含：
